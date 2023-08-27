@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reto Clase</title>
+    <link rel="shortcut icon" href="descarga.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="descarga.png">
+
+</head>
+<div style="color: rgb(59, 152, 160); font-weight:bold;" id="current_date"></p>
+<script>
+    document.getElementById("current_date").innerHTML = Date();
+    let tweet= [];
+    function mostrar_arreglo()
+
+    {
+        document.getElementById("lista").innerHTML = tweet;
+    }
+
+
+    function mostrar_tamano()
+    {
+        let cantidad = tweet.length;
+        document.getElementById("detalle").innerHTML = cantidad;
+    }
+    function agregar_texto()
+    {
+        var nombre = document.getElementById("txt_tweet").value;
+        tweet.push(nombre,"<br>","<br>");
+        mostrar_arreglo();
+        document.getElementById("txt_tweet").value="";
+    }
+
+    function quitar_arreglo()
+    {
+        tweet.pop();
+        tweet.sort();
+        mostrar_arreglo();
+    }
+    
+
+</script>
+
+<body style="background-image: url(headphones.png);"></body>
+<body>
+  <h3 align="center" class="animate__animated animate__pulse" style="color: rgb(18, 19, 18);">
+     Erick Oswaldo Sagastume Cordon  <a href=></a>-- Curso de Programacion Web</a>
+     <br>
+     <br>
+     <h2 align="center" class="animate__animated animate__pulse" style="color: rgb(10, 130, 10);">Tweet</h2>
+     <h2 align="left" class="animate__animated animate__pulse" style="color: rgb(217, 52, 14);">UMG</h2>
+     <h3 align="left" class="animate__animated animate__pulse" style="color: rgb(17, 14, 217);">Hola en que puedo ayudarte ?</h3>
+ 
+  </body>
+  <body onload="mostrar_arreglo()">
+    <input type="texto" id="txt_tweet" placeholder="Tweet">
+    <input type="button"  style="color: rgb(43, 168, 5); border: 2px solid #060708; font-weight:bold;" value="Enviar" onclick="agregar_texto()">
+    <input type="button" style="color: rgb(248, 10, 10); border: 2px solid #060708; font-weight:bold;" value="Eliminar" onclick="quitar_arreglo()">
+    <br>
+    <br>
+    <div id="lista">  </div>
+    <div id="detalle"></div>
+</body>
+</html>
